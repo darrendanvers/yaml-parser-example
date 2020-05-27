@@ -13,7 +13,7 @@ sourceCompatibility = 1.11
 jar {
     manifest {
         attributes 'Implementation-Title': 'java-to-html',
-                'Main-Class': 'com.dd.JavaToHtmlApplication'
+                'Main-Class': 'dev.codestijl.YamlApplication'
     }
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
