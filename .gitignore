@@ -1,0 +1,4 @@
+.gradle/                       # Ignore the files grade pulls
+build/                         # Ignore built files
+.idea/                         # Ignore IntelliJ files.
+.DS_Store                      # Ignore MacOS directory formatting files.
