@@ -8,14 +8,12 @@ plugins {
 group 'com.dd'
 version '1.0.0'
 
-sourceCompatibility = 1.11
-
 jar {
     manifest {
         attributes 'Implementation-Title': 'java-to-html',
-                'Main-Class': 'dev.codestijl.YamlApplication'
+                'Main-Class': 'dev.codestijl.yaml.YamlApplication'
     }
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 repositories {
@@ -23,9 +21,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.3'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.10.4'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.4'
+
+    compileOnly 'org.projectlombok:lombok:1.18.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.12'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+    testCompileOnly group: 'junit', name: 'junit', version: '4.12'
 }
 
 // Configure Chechstyle.

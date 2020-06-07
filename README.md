@@ -1,13 +1,23 @@
-# My Gradle Template
+# YAML Parser Example
 
-An empty project to simplify creating new gradle-based projects.
+A sample project that show how to use the Jackson libraries to parse YAML.
 
-1. Copy this directory to an empty project directory.
-2. Remove the .git directory
-3. Edit [settings.gradle](./settings.gradle) file with the name of the new project.
-4. Remove the following files (they are just there to get the directory structure in git):
-   * [/src/main/java/toDelete.txt](/src/main/java/toDelete.txt).
-   * [/src/main/resources/toDelete.txt](/src/main/resoruces/toDelete.txt).
-   * [/src/test/java/toDelete.txt](/src/test/java/toDelete.txt).
-   * [/src/test/resoruces/toDelete.txt](/src/tes/resoruces/toDelete.txt).
+## Building and Running
+
+On the command line, type in `./gradlew build` to execute the build.
+
+To run the program, type in:
+
+    cd build/libs
+    java -jar yaml-parser-example-1.0.0.jar
+    
+The application will parse a YAML file contained in the jar and print out
+the objects that were loaded from that file.
+
+## Further Information
+[Jackson](https://github.com/FasterXML/jackson)
+
+[Jackson YAML Extension](https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml)
+
+[YAML](https://yaml.org)
 
